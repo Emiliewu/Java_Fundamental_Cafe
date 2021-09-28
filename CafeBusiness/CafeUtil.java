@@ -7,12 +7,13 @@ public class CafeUtil {
     public void getStreakGoal() {
         Integer total = 0;
         for(int i = 1; i <= 10; i++){
-            total += i;
+            total = total + i + total;
         }
-        Integer left = 0;
+        Integer alreadybought = 0;
         for(int j = 1; j <= this.numWeeks; j++) {
-            left = total - j;
+            alreadybought = j + 2*alreadybought;
         }
+        Integer left = total - alreadybought;
         System.out.println("You need to purchase at least " + total + " coffees in total to win \n");
         System.out.format("Purchases needed by week 10: " + left + "\n");
     }
